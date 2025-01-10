@@ -22,9 +22,11 @@ object AttackRepository {
     val namePrefixArt: String?,
     val description: String?,
     val banner: String?,
+    val wisteriaTurn: BigDecimal,
     val poisonTurn: BigDecimal,
     val burnTurn: BigDecimal,
     val bleedTurn: BigDecimal,
+    val wisteria: BigDecimal,
     val poison: BigDecimal,
     val burn: BigDecimal,
     val bleed: BigDecimal,
@@ -42,9 +44,11 @@ object AttackRepository {
       row[attacks.name_prefix_art],
       row[attacks.description],
       row[attacks.banner],
+      row[attacks.wisteria_turn],
       row[attacks.poison_turn],
       row[attacks.burn_turn],
       row[attacks.bleed_turn],
+      row[attacks.wisteria],
       row[attacks.poison],
       row[attacks.burn],
       row[attacks.bleed],
@@ -101,9 +105,11 @@ object AttackRepository {
     namePrefixArt: String?,
     description: String?,
     banner: String?,
+    wisteriaTurn: BigDecimal?,
     poisonTurn: BigDecimal?,
     burnTurn: BigDecimal?,
     bleedTurn: BigDecimal?,
+    wisteria: BigDecimal?,
     poison: BigDecimal?,
     burn: BigDecimal?,
     bleed: BigDecimal?,
@@ -120,6 +126,9 @@ object AttackRepository {
       it[this.name_prefix_art] = namePrefixArt
       it[this.description] = description
       it[this.banner] = banner
+      if (wisteriaTurn != null) {
+        it[this.wisteria_turn] = wisteriaTurn
+      }
       if (poisonTurn != null) {
         it[this.poison_turn] = poisonTurn
       }
@@ -128,6 +137,9 @@ object AttackRepository {
       }
       if (bleedTurn != null) {
         it[this.bleed_turn] = bleedTurn
+      }
+      if (wisteria != null) {
+        it[this.wisteria] = wisteria
       }
       if (poison != null) {
         it[this.poison] = poison
@@ -162,9 +174,11 @@ object AttackRepository {
       namePrefixArt = namePrefixArt,
       description = description,
       banner = banner,
+      wisteriaTurn = wisteriaTurn ?: DefaultValue.attr,
       poisonTurn = poisonTurn ?: DefaultValue.attr,
       burnTurn = burnTurn ?: DefaultValue.attr,
       bleedTurn = bleedTurn ?: DefaultValue.attr,
+      wisteria = wisteria ?: DefaultValue.attr,
       poison = poison ?: DefaultValue.attr,
       burn = burn ?: DefaultValue.attr,
       bleed = bleed ?: DefaultValue.attr,
@@ -182,9 +196,11 @@ object AttackRepository {
     namePrefixArt: String? = null,
     description: String? = null,
     banner: String? = null,
+    wisteriaTurn: BigDecimal? = null,
     poisonTurn: BigDecimal? = null,
     burnTurn: BigDecimal? = null,
     bleedTurn: BigDecimal? = null,
+    wisteria: BigDecimal? = null,
     poison: BigDecimal? = null,
     burn: BigDecimal? = null,
     bleed: BigDecimal? = null,
@@ -210,6 +226,9 @@ object AttackRepository {
       if (banner != null) {
         it[this.banner] = banner
       }
+      if (wisteriaTurn != null) {
+        it[this.wisteria_turn] = wisteriaTurn
+      }
       if (poisonTurn != null) {
         it[this.poison_turn] = poisonTurn
       }
@@ -218,6 +237,9 @@ object AttackRepository {
       }
       if (bleedTurn != null) {
         it[this.bleed_turn] = bleedTurn
+      }
+      if (wisteria != null) {
+        it[this.wisteria] = wisteria
       }
       if (poison != null) {
         it[this.poison] = poison
