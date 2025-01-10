@@ -55,9 +55,9 @@ class AttackBuilder(BaseEmbedBuilder):
     headers += '\n'
     if self.attack.wisteria_turn != 0:
       headers += (
-        self.msgbuilder.get_content(self.LANGUAGE, "attackWisteriaTurnLineStyle", turn=self.attack.bleed_turn)
-        if self.attack.bleed_turn == 1
-        else self.msgbuilder.get_content(self.LANGUAGE, "attackWisteriaTurnPluralLineStyle", turn=self.attack.bleed_turn)
+        self.msgbuilder.get_content(self.LANGUAGE, "attackWisteriaTurnLineStyle", turn=self.attack.wisteria_turn)
+        if self.attack.wisteria_turn == 1
+        else self.msgbuilder.get_content(self.LANGUAGE, "attackWisteriaTurnPluralLineStyle", turn=self.attack.wisteria_turn)
       ) + '\n'
     if self.attack.bleed_turn != 0:
       headers += (
