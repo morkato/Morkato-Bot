@@ -42,6 +42,8 @@ class AttackBuilder(BaseEmbedBuilder):
         if self.attack.blood == 0
         else self.msgbuilder.get_content(self.LANGUAGE, "attackBloodLineStyle", blood=numerize(self.attack.blood))
       ) + '\n'
+    if self.attack.wisteria != 0:
+      headers += self.msgbuilder.get_content(self.LANGUAGE, "attackWisteriaLineStyle", wisteria=numerize(self.attack.wisteria)) + '\n'
     if self.attack.stun != 0:
       headers += self.msgbuilder.get_content(self.LANGUAGE, "attackStunLineStyle", stun=numerize(self.attack.stun)) + '\n'
     if self.attack.bleed != 0:
@@ -51,6 +53,12 @@ class AttackBuilder(BaseEmbedBuilder):
     if self.attack.poison != 0:
       headers += self.msgbuilder.get_content(self.LANGUAGE, "attackPoisonLineStyle", poison=numerize(self.attack.poison)) + '\n'
     headers += '\n'
+    if self.attack.wisteria_turn != 0:
+      headers += (
+        self.msgbuilder.get_content(self.LANGUAGE, "attackWisteriaTurnLineStyle", turn=self.attack.bleed_turn)
+        if self.attack.bleed_turn == 1
+        else self.msgbuilder.get_content(self.LANGUAGE, "attackWisteriaTurnPluralLineStyle", turn=self.attack.bleed_turn)
+      ) + '\n'
     if self.attack.bleed_turn != 0:
       headers += (
         self.msgbuilder.get_content(self.LANGUAGE, "attackBleedingTurnLineStyle", turn=self.attack.bleed_turn)

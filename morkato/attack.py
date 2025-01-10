@@ -39,9 +39,11 @@ class Attack:
     self.name_prefix_art = payload["name_prefix_art"]
     self.description = payload["description"]
     self.banner = payload["banner"]
+    self.wisteria_turn = payload["wisteria_turn"]
     self.poison_turn = payload["poison_turn"]
     self.burn_turn = payload["burn_turn"]
     self.bleed_turn = payload["bleed_turn"]
+    self.wisteria = payload["wisteria"]
     self.poison = payload["poison"]
     self.burn = payload["burn"]
     self.stun = payload["stun"]
@@ -60,9 +62,11 @@ class Attack:
     description: Optional[str] = None,
     resume_description: Optional[str] = None,
     banner: Optional[str] = None,
+    wisteria_turn: Optional[int] = None,
     poison_turn: Optional[int] = None,
     burn_turn: Optional[int] = None,
     bleed_turn: Optional[int] = None,
+    wisteria: Optional[int] = None,
     poison: Optional[int] = None,
     burn: Optional[int] = None,
     bleed: Optional[int] = None,
@@ -78,9 +82,11 @@ class Attack:
       description=description,
       resume_description=resume_description,
       banner=banner,
+      wisteria_turn = wisteria_turn,
       poison_turn = poison_turn,
       burn_turn = burn_turn,
       bleed_turn = bleed_turn,
+      wisteria = wisteria,
       poison = poison,
       burn = burn,
       bleed = bleed,

@@ -44,9 +44,11 @@ class Attack(TypedDict):
   name_prefix_art: Optional[str]
   description: Optional[str]
   banner: Optional[str]
+  wisteria_turn: int
   poison_turn: int
   burn_turn: int
   bleed_turn: int
+  wisteria: int
   poison: int
   burn: int
   bleed: int
